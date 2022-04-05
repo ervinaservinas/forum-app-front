@@ -15,7 +15,7 @@ const Comments = ({ x }) => {
         return <div>
             {replacedText}
             <div>
-                {imageLink !== '' && <img src={imageLink} alt="failed" />}
+                {imageLink !== '' && <img src={imageLink} alt="" />}
             </div>
             <div><a href={youtubeLink}>{youtubeLink}</a></div>
             <div>
@@ -35,7 +35,7 @@ const Comments = ({ x }) => {
                 <img src={x.imageUser} alt="User image" />
                 <div> <b>{x.owner}</b></div>
                 <div>Registered: </div>
-                <div>{displayDate(x.registeredUserTime)}</div>
+                <div>{displayDate(x.registeredUserTimestamp)}</div>
             </div>
             <div className='comment-box text-break commentBoxses'>
                 <div><b>Comments:</b></div>

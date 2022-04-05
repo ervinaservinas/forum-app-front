@@ -1,9 +1,6 @@
 body{
     background-color: #FFEEC3;
 }
-
-
-
 .reg-log-container {
     width: 280px;
     padding: 25px 15px;
@@ -20,11 +17,7 @@ body{
 
 
 }
-.btn:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-}
+
 
 .input {
     width: 250px;
@@ -42,26 +35,6 @@ body{
     padding: 10px;
 }
 
-
-/* notification */
-.badge {
-    position: relative;
-    top: -6px;
-    right: 0px;
-    padding: 5px 8px;
-    border-radius: 10%;
-    background: rgb(227, 15, 15);
-    color: white;
-}
-.badge1 {
-    position: relative;
-    top: 0px;
-    right: 0px;
-    padding: 5px 10px;
-    border-radius: 50%;
-    background: rgb(131, 131, 131);
-    color: white;
-}
 .user-container {
     width: auto;
     background-color: #ffeec3;
@@ -76,15 +49,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-@media screen and (max-width: 480px) {
-    .small-column {
-        flex-direction: column;
-    }
-}
 
 
-
-/* pagination */
 .pagination {
     justify-content: center;
     margin-top: 20px;
@@ -131,8 +97,8 @@ ul.pagination li.active {
     justify-content: space-between;
     margin-top: 10px;
 }
-/* Topic */
-.topic-card {
+
+.topicCard {
     border: #f5cac2;
     margin: 2px;
     background-color: rgba(33, 42, 33, 0.58);
@@ -142,17 +108,13 @@ ul.pagination li.active {
 .title {
     width: 80%;
 }
-.topic-card:hover {
+.topicCard:hover {
     background-color: rgba(56, 72, 56, 0.58);
 }
 .topic-onclick:hover {
     cursor: pointer;
 }
-@media screen and (max-width: 480px) {
-    .sm-column {
-        flex-direction: column;
-    }
-}
+
 /* comment */
 .comment-container {
     margin: 20px 60px;
@@ -185,85 +147,20 @@ textarea {
     width: 89%;
 }
 .user-comment-container {
-
-
     width: auto;
 }
 .link-topic:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-@media screen and (max-width: 768px) {
-    .md-column {
-        flex-direction: column;
-    }
-    .user-box {
-        border-right: none;
-        border-bottom: solid 1px black;
-        transform: scale(0.8);
-    }
-    .user-box img {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-    }
-    .comment-container {
-        margin: 0 20px;
-    }
-    textarea {
-        margin: 20px 20px 0 20px;
-        width: 90%;
-    }
-    .link {
-        font-size: 15px;
-    }
-}
-.dis-flex {
+
+.di-flex {
     display: flex;
 }
 .none {
     display: none;
 }
-@media screen and (max-width: 480px) {
-    .sm-flex {
-        display: flex;
-    }
-    .sm-toolbar {
-        background-color: rgba(56, 72, 56, 0.58);
-        position: relative;
-        height: 40px;
-        color: white;
-    }
-    .menu-icon {
-        position: absolute;
-        right: 10px;
-    }
-    .menu-icon:hover {
-        cursor: pointer;
-    }
-    .sm-none {
-        display: none;
-    }
-    .sm-toolbar-box {
-        color: white;
-        background-color: #7cf1e3;
-        font-size: 12px;
-        width: 100%;
-        top: 40px;
-        position: absolute;
-        text-align: center;
-        z-index: 999;
-    }
-    .link:hover {
-        background-color: #2be2e2;
-    }
-    .link {
-        padding: 5px 0;
-    }
-    .user-info {
-        font-size: 14px;
-    }
-}
+
 .profile{
     height: auto;
     width: 100%;
