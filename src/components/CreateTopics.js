@@ -1,16 +1,15 @@
 import React from 'react';
 import { useState, useRef } from 'react';
-import { CloseButton } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import http from '../plugins/http';
 
-const ModalTopic = ({ setModal }) => {
+const CreateTopics = ({ setModal }) => {
     const [getError, setError] = useState(null)
     const newTopic = useRef()
     const nav = useNavigate()
-    function closeModal() {
+    function closeTopic() {
         document.body.style.overflow = 'visible'
-        setModal(false)
+
     }
     function createTopic() {
         const topic = {
@@ -20,8 +19,8 @@ const ModalTopic = ({ setModal }) => {
             if (res.success) {
                 newTopic.current.value = ""
                 setError(null)
-                nav('/tema/' + res.data)
-                closeModal()
+                nav('/thema/' + res.data)
+                closeTopic()
             } else {
                 setError(res.message)
             }
@@ -47,4 +46,4 @@ const ModalTopic = ({ setModal }) => {
     );
 };
 
-export default ModalTopic;
+export default CreateTopics;

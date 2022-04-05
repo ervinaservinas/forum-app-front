@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Video = ({ videoLink }) => {
+const YoutubeVideoIFrame = ({ videoLink }) => {
 
     return (
         <>
-            <iframe width="200"
+            <iframe width="300"
                     title="YouTube video player"
-                    height="130" src={videoLink}
+                    height="230" src={videoLink}
                     sandbox="allow-scripts allow-same-origin allow-presentation">
             </iframe>
         </>
@@ -14,4 +14,4 @@ const Video = ({ videoLink }) => {
     );
 }
 
-export default Video;
+export default YoutubeVideoIFrame;

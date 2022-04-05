@@ -1,16 +1,14 @@
 import React from 'react';
-import { useState, useRef } from 'react';
-import { CloseButton } from "react-bootstrap";
+import {useState, useRef} from 'react';
+import {CloseButton} from "react-bootstrap";
 import http from '../plugins/http';
 
-const ModalChangeImage = ({ setModal, getUser, setUser}) => {
+const ChangeImage = ({setModal, getUser, setUser}) => {
     const [getError, setError] = useState(null)
     const newImage = useRef()
-    function closeModal() {
-        document.body.style.overflow = 'visible'
-        setModal(false)
-    }
-    function changeImage(){
+
+
+    function changeImage() {
         const updatedUser = {
             newImage: newImage.current.value,
             user: getUser.username
@@ -20,38 +18,32 @@ const ModalChangeImage = ({ setModal, getUser, setUser}) => {
                 newImage.current.value = ""
                 setUser(res.data)
                 setError(null)
-                closeModal()
             } else {
                 setError(res.message)
             }
         })
     }
+
     return (
         <div>
-            <div onClick={closeModal} className="modal-window d-flex justify-content-center align-items-center">
 
-                <div onClick={(e) => e.stopPropagation()} className="modal-main d-flex  justify-content-around">
 
-                    {/*<CloseButton
-                        onClick={closeModal}
-                        className="close-button"
-                    />*/}
-                    <div className="d-flex flex-column">
-                        <input ref={newImage}
-                               placeholder="import url img"
-                        />
-                        <div className="d-flex justify-content-center flex-column align-items-center">
-                            <div>{getError}</div>
+            <div className="d-flex flex-column">
+                <input ref={newImage}
+                       placeholder="import url img"
+                />
+                <div className="d-flex justify-content-center flex-column align-items-center">
+                    <div>{getError}</div>
 
-                        </div>
-                        <div>
-                            <button className="btn" onClick={changeImage}>CHANGE IMG</button>
-                        </div>
-                    </div>
+                </div>
+                <div>
+                    <button className="btn" onClick={changeImage}>Change image</button>
                 </div>
             </div>
-</div>
+        </div>
+
+
     );
 };
 
-export default ModalChangeImage;
+export default ChangeImage;

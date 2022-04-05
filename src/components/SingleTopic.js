@@ -5,7 +5,7 @@ import { FaHeart } from 'react-icons/fa'
 import { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
-const OneTopic = ({ topic }) => {
+const SingleTopic = ({ topic }) => {
     // console.log(topic)
     const { getUser } = useContext(UserContext)
     const [getNew, setNew] = useState(false)
@@ -48,4 +48,4 @@ const OneTopic = ({ topic }) => {
     );
 };
 
-export default OneTopic;
+export default SingleTopic;

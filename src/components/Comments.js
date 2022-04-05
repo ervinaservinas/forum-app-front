@@ -1,17 +1,28 @@
 import React from 'react';
-import { validLink } from './Regex'
+import { validLink } from './RegexValidator'
+import { validImg } from './RegexImageValidator';
+import YoutubeVideoIFrame from './YoutubeVideoIFrame';
 
-const OneComment = ({ x }) => {
-    /*function validate(text) {
-       let link = ''
-        let imgLink = ''
-        let str = text.split('');
-       str.map(x=>validLink.test(x)? link = x : null)
-        let newText = text.replace(link,'')
-        let url = link.replace("watcj?v=", "emded/")
-
-
-    }*/
+const Comments = ({ x }) => {
+    function validate(text) {
+        let youtubeLink = ''
+        let imageLink = ''
+        let str = text.split(' ');
+        str.map(x => validLink.test(x) ? youtubeLink = x : null)
+        str.map(x => validImg.test(x) ? imageLink = x : null)
+        let replacedText = text.replace(youtubeLink, '').replace(imageLink, '')
+        let url = youtubeLink.replace("watch?v=", "embed/");
+        return <div>
+            {replacedText}
+            <div>
+                {imageLink !== '' && <img src={imageLink} alt="failed" />}
+            </div>
+            <div><a href={youtubeLink}>{youtubeLink}</a></div>
+            <div>
+                {url !== '' && <YoutubeVideoIFrame videoLink={url} />}
+            </div>
+        </div>
+    }
     function displayDate(timestamp) {
         const date = new Date(timestamp);
         return (
@@ -19,17 +30,17 @@ const OneComment = ({ x }) => {
         )
     }
     return (
-        <div className='comment-container d-flex md-column '>
-            <div className='flex-grow-1'>
-                <img src={x.imageUser} alt="" />
+        <div className='comment-container'>
+            <div className='flex-grow2'>
+                <img src={x.imageUser} alt="User image" />
                 <div> <b>{x.owner}</b></div>
                 <div>Registered: </div>
-                <div>{displayDate(x.registeredUserTimestamp)}</div>
+                <div>{displayDate(x.registeredUserTime)}</div>
             </div>
-            <div className='comment-box text-break flex-grow-3'>
+            <div className='comment-box text-break commentBoxses'>
                 <div><b>Comments:</b></div>
                 {displayDate(x.createdTimestamp)}
-                {x.text}
+                {validate(x.text)}
             </div>
 
 
@@ -37,4 +48,4 @@ const OneComment = ({ x }) => {
     );
 };
 
-export default OneComment;
+export default Comments;
