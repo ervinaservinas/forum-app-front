@@ -35,6 +35,10 @@ const Login = () => {
         <div className='loginFlex d-flex align-items-center '>
 
             <div>Log in</div>
+            <div>
+
+
+            </div>
             <input className='input' type="text" placeholder='Username' ref={inp.username} />
 
             <input className='input' type="password" placeholder='Password' ref={inp.pass} />
